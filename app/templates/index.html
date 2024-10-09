@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EMG -> Hand Landmarks Dataset Generator</title>
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/root.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+	<meta name="description" content="Neuromotion Capture collects EMG signals from a Thalmic Labs Myo Armband alongside real-time hand landmarks using the MediaPipe Hand Landmarker library, allowing for the generation of a dataset for future EMG projects.">
+	<meta property="og:title" content="Neuromotion Capture">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+	<meta property="og:image:alt" content="">
+
+	<link rel="icon" href="{{ url_for('static', filename='img/icon/icon.png') }}" sizes="any">
+	<link rel="apple-touch-icon" href="{{ url_for('static', filename='img/icon/icon.png') }}">
+	<!-- <a href="https://www.flaticon.com/free-icons/neuro" title="neuro icons">Neuro icons created by Uniconlabs - Flaticon</a> -->
+</head>
+
+<body>
+	<main>
+		<section class="handLandmarker">
+			<video id="webcam" autoplay playsinline></video>
+			<canvas class="outputCanvas" id="outputCanvas"></canvas>
+		</section>
+
+		<section class="emg">
+			<div id="pod0"></div>
+			<div id="pod1"></div>
+			<div id="pod2"></div>
+			<div id="pod3"></div>
+			<div id="pod4"></div>
+			<div id="pod5"></div>
+			<div id="pod6"></div>
+			<div id="pod7"></div>
+			<div class="gyroscopeGraph" id="gyroscopeGraph"></div>
+		</section>
+
+		<section class="menu">
+			<button class="startRecording" id="startRecording">Start Recording</button>
+			<button class="stopRecording" id="stopRecording" disabled>Stop Recording</button>
+			<button class="viewRecordings" id="viewRecordings" disabled>View Recordings</button>
+		</section>
+	</main>
+
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/drawingUtils.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/hands.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/flot.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/myo.js') }}"></script>
+	<script type="module" src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+</body>
+
+</html>
